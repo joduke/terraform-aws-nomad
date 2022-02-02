@@ -28,7 +28,7 @@ variable "ami_id" {
 variable "cluster_name" {
   description = "What to name the cluster and all of its associated resources"
   type        = string
-  default     = "nomad-example"
+  default     = "joduke-nomad-example"
 }
 
 variable "server_instance_type" {
@@ -58,7 +58,7 @@ variable "num_clients" {
 variable "cluster_tag_key" {
   description = "The tag the EC2 Instances will look for to automatically discover each other and form a cluster."
   type        = string
-  default     = "nomad-servers"
+  default     = "joduke-nomad-servers"
 }
 
 variable "cluster_tag_value" {
@@ -67,15 +67,14 @@ variable "cluster_tag_value" {
   default     = "auto-join"
 }
 
-variable "ssh_key_name" {
-  description = "The name of an EC2 Key Pair that can be used to SSH to the EC2 Instances in this cluster. Set to an empty string to not associate a Key Pair."
-  type        = string
-  default     = ""
-}
-
 variable "vpc_id" {
   description = "The ID of the VPC in which the nodes will be deployed.  Uses default VPC if not supplied."
   type        = string
   default     = ""
 }
 
+variable "ssh_key_name" {
+  description = "The name of an EC2 Key Pair that can be used to SSH to the EC2 Instances in this cluster. Set to an empty string to not associate a Key Pair."
+  type        = string
+  default     = ""
+}
