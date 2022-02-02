@@ -28,7 +28,7 @@ variable "ami_id" {
 variable "cluster_name" {
   description = "What to name the cluster and all of its associated resources"
   type        = string
-  default     = "nomad-example"
+  default     = "joduke-nomad-example"
 }
 
 variable "server_instance_type" {
@@ -58,19 +58,13 @@ variable "num_clients" {
 variable "cluster_tag_key" {
   description = "The tag the EC2 Instances will look for to automatically discover each other and form a cluster."
   type        = string
-  default     = "nomad-servers"
+  default     = "joduke-nomad-servers"
 }
 
 variable "cluster_tag_value" {
   description = "Add a tag with key var.cluster_tag_key and this value to each Instance in the ASG. This can be used to automatically find other Consul nodes and form a cluster."
   type        = string
   default     = "auto-join"
-}
-
-variable "ssh_key_name" {
-  description = "The name of an EC2 Key Pair that can be used to SSH to the EC2 Instances in this cluster. Set to an empty string to not associate a Key Pair."
-  type        = string
-  default     = ""
 }
 
 variable "vpc_id" {
