@@ -46,7 +46,7 @@ variable "instance_type" {
 variable "num_servers" {
   description = "The number of server nodes to deploy. We strongly recommend using 3 or 5."
   type        = number
-  default     = 3
+  default     = 5
 }
 
 variable "num_clients" {
